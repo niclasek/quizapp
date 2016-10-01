@@ -1,0 +1,21 @@
+{
+  "name": "quizapp",
+  "description": "a quizapp",
+  "main": "app.js",
+  "authors": [
+    "Niclas Ek <niclas.ek@su.se>"
+  ],
+  "license": "ISC",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "font-awesome": "^4.6.3"
+  }
+}

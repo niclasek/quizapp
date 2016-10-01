@@ -1,0 +1,87 @@
+1. Install NodeJS
+-verify with '$node -v'
+
+2. Setup npm for this project
+- run '$npm init' from project dir and answer the default on all questions
+- creates file package.json
+
+3. Install Express
+- run '$npm install express --save'
+
+4. Create app.js
+add:
+var express = require('express');
+var app = express();
+var port = 5000;
+app.listen(port, function(err){
+    console.log('running server on port ' + port);
+});
+
+5. Start your app
+- run '$node app.js'
+- Your application is up and running but it doesn't do anything
+
+6. Add start script to package.json
+- in "scripts" add '"start": "node app.js"'
+- this enables you to start your application with 'npm start'
+
+7. Add a route to app.js
+app.get('/', function(req, res){
+    res.send('Hello world');
+});
+
+8. Find a boostrap template that you like.
+- Download and extract the zip
+- create a folder 'public' and copy the css and js directories from the bootstrap theme into that folder
+- create the folder structure 'src/views' and put the index.html in there
+
+9. Make public a static directory
+This is so that we don't have to create routes for all css and js-files.
+add:
+'app.use(express.static('public'));'
+'app.use(express.static('src/views'));'
+to app.js
+
+10. Install Bower
+We want to use the latest versions of bootstrap, jquery, and font awesome.
+This is done with Bower, which is a package manager for the front end web
+- run '$npm install bower -g'
+- the -g installs bower globally so that we can execute it from the commande line.
+
+11. Initiate bower
+- run '$bower init' and answer the default on all questions
+
+12. Create .bowerrc
+Configuration file for bower
+We want bower to install the files to our static directory 'public'
+add:
+{
+    "directory": "public/lib"
+}
+
+13. Install boostrap with Bower
+- run '$bower install --save bootstrap'
+
+14. Replace the boostrap refs in index.html to use the versions installed with Bower
+Replace
+<link href="css/bootstrap.min.css" rel="stylesheet">
+to
+<link href="lib/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+
+<script src="js/bootstrap.min.js"></script>
+to
+<script src="lib/bootstrap/dist/js/bootstrap.min.js"></script>
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+to
+<script src="lib/jquery/dist/jquery.min.js"></script>
+
+15. Install font-awesome with Bower
+- run '$bower install --save font-awesome'
+
+16. Update index.html to use font-awesome installed with Bower
+Replace
+<link href="//netdna.bootstrapcdn.com/font-awesome/3.2.1/css/font-awesome.min.css" rel="stylesheet">
+with
+<link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+
