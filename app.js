@@ -9,6 +9,7 @@ app.listen(port, function(err){
 app.use(express.static('public'));
 app.use(express.static('src/views'));
 
+//Not used since the static is taking the route before
 app.get('/', function(req, res){
     res.send('Hello world');
 });

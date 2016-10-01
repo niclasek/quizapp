@@ -85,3 +85,41 @@ Replace
 with
 <link href="lib/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
+17. Gulp - a task manager for web projects
+# Installed with NPM, Easy to use, Code based configuration, Package based
+Install Gulp
+$npm install -g gulp
+Gulp needs to be installed locally as well:
+$npm install gulp --save-dev
+
+18. JSHint and JSCS
+# JSHint - Code Quality - Detects potential errors, enforces coding conventions, easily configurable and open source
+# JSCS - Code Style - Enforces style conventions, easily configurable and open source
+Install JSHint and JSCS:
+$npm install --save-dev jshint gulp-jshint gulp-jscs jshint-stylish
+Download .jshintrc and .jssrc from https://github.com/jonathanfmills/CodingStandards and copy them to the root of your project
+
+19. Create gulpfile.js
+Put this in gulpfile.js
+var gulp = require('gulp');
+var jshint = require('gulp-jshint');
+var jscs = require('gulp-jscs');
+
+var jsFiles = ['*.js', 'src/**/*.js'];
+
+gulp.task('style', function() {
+    return gulp.src(jsFiles)
+        .pipe(jshint())
+        .pipe(jshint.reporter('jshint-stylish', {
+            verbose: true
+        }))
+        .pipe(jscs());
+});
+and then run:
+$gulp style
+
+Next step is Setting up Wiredep in the section Setting up Gulp.
+
+
+
+
