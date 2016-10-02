@@ -132,6 +132,14 @@ $npm install --save-dev wiredep
 - run:
 $gulp inject
 
+21. Gulp inject
+# Injects my css and js-files into html-files
+- run:
+$npm install --save-dev gulp-inject
+
+22. Update the gulp inject task
+- Update gulpfile.js
+- add inject:css and inject:js to index.html and remove the js and css imports
 
 
 
