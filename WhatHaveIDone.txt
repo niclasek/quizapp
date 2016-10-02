@@ -98,6 +98,7 @@ $npm install gulp --save-dev
 Install JSHint and JSCS:
 $npm install --save-dev jshint gulp-jshint gulp-jscs jshint-stylish
 Download .jshintrc and .jssrc from https://github.com/jonathanfmills/CodingStandards and copy them to the root of your project
+Activate the built-in jshint and jscs in intellij
 
 19. Create gulpfile.js
 Put this in gulpfile.js
