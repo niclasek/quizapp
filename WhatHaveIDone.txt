@@ -119,7 +119,26 @@ gulp.task('style', function() {
 and then run:
 $gulp style
 
-Next step is Setting up Wiredep in the section Setting up Gulp.
+20. Wiredep
+# Wiredep is used to inject your javascript and css files into your html files
+- run:
+$npm install --save-dev wiredep
+- add the inject task to gulpfile.js
+
+21. Inject the js and css files into the html with gulp
+- Remove the javascript files in index.html that are coming from components installed with bower
+- To have the css files added with wiredep you need to add the "overrides" in bower.json
+- Add bower:js and bower:css to your index.html file where you want to inject the files
+- run:
+$gulp inject
+
+
+
+
+
+
+Notes:
+I shoud be able to install angular with Bower
 
 
 
