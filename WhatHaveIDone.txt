@@ -141,13 +141,18 @@ $npm install --save-dev gulp-inject
 - Update gulpfile.js
 - add inject:css and inject:js to index.html and remove the js and css imports
 
+23. Install nodemon
+# a tool that automatically restarts your application when files are being updated
+- run:
+$npm install --save-dev gulp-nodemon
 
+24. Update gulpfile.js with a new task
+Updated with a new task that uses nodemon to run the app.
+To run the app with nodemon use:
+$gulp serve
 
 
 
 Notes:
-I shoud be able to install angular with Bower
-
-
-
-
+I should be able to install angular with Bower
+Probably it is better to use jquery with templating engines
