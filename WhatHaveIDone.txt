@@ -151,6 +151,13 @@ Updated with a new task that uses nodemon to run the app.
 To run the app with nodemon use:
 $gulp serve
 
+25. Templating engine - EJS
+Install with:
+$npm install --save ejs
+
+26. Using ejs
+Update app.js and rename index.html to index.ejs
+
 
 
 Notes:
