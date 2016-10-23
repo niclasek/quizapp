@@ -190,7 +190,7 @@ Update gulpfile.js to use eslint instead of jshint and jscs, see documentation h
 
 Remove jshint, jshint-stylish, gulp-jscs, gulp-jshint from package.json
 
-
+Updated .eslintrc so that functions does not need to have 'use strict'. I should look into this later.
 
 
 
