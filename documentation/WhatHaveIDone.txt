@@ -192,7 +192,7 @@ Remove jshint, jshint-stylish, gulp-jscs, gulp-jshint from package.json
 
 Updated .eslintrc so that functions does not need to have 'use strict'. I should look into this later.
 
-
+29. Continuing with EJS.
 
 
 Notes:
