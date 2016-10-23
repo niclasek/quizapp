@@ -158,6 +158,10 @@ $npm install --save ejs
 26. Using ejs
 Update app.js and rename index.html to index.ejs
 
+27. Switch to Brackets
+Instead of using Atom as editor I have now switched to Brackets. It is a much better editor.
+I have installed the plugins listed in the screenshots 'BracketsPluginsX' in the documentation folder. 
+
 
 
 Notes:
