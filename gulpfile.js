@@ -1,24 +1,23 @@
 var gulp = require('gulp');
-var jshint = require('gulp-jshint');
-var jscs = require('gulp-jscs');
+var eslint = require('gulp-eslint');
 var nodemon = require('gulp-nodemon');
 
 var jsFiles = ['*.js', 'src/**/*.js'];
 
-gulp.task('style', function() {
+gulp.task('lint', function () {
     return gulp.src(jsFiles)
-        .pipe(jshint())
-        .pipe(jshint.reporter('jshint-stylish', {
-            verbose: true
-        }))
-        .pipe(jscs());
+        .pipe(eslint())
+        .pipe(eslint.format());
 });
 
-gulp.task('inject', function() {
+
+gulp.task('inject', function () {
     var wiredep = require('wiredep').stream;
     var inject = require('gulp-inject');
 
-    var injectSrc = gulp.src(['./public/css/*.css', './public/js/*.js'], {read: false});
+    var injectSrc = gulp.src(['./public/css/*.css', './public/js/*.js'], {
+        read: false
+    });
     var injectOptions = {
         ignorePath: '/public'
     };
@@ -35,8 +34,8 @@ gulp.task('inject', function() {
         .pipe(gulp.dest('./src/views'));
 });
 
-//Will run style and inject tasks before serve
-gulp.task('serve', ['style', 'inject'], function(){
+//Will run lint and inject tasks before serve
+gulp.task('serve', ['lint', 'inject'], function () {
     var options = {
         script: 'app.js',
         delayTime: 1,
@@ -47,7 +46,7 @@ gulp.task('serve', ['style', 'inject'], function(){
     };
 
     return nodemon(options)
-        .on('restart', function(ev) {
+        .on('restart', function (ev) {
             console.log('Restarting...');
         });
 });

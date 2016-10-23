@@ -160,7 +160,38 @@ Update app.js and rename index.html to index.ejs
 
 27. Switch to Brackets
 Instead of using Atom as editor I have now switched to Brackets. It is a much better editor.
-I have installed the plugins listed in the screenshots 'BracketsPluginsX' in the documentation folder. 
+I have installed the plugins listed in the screenshots 'BracketsPlugins1 and 2' in the documentation folder. 
+
+28. Replace JSCS and JSHint with ESLint
+Why change? https://www.sitepoint.com/comparison-javascript-linting-tools/
+How-to: https://samdutton.wordpress.com/2015/10/14/javascript-linting-moving-from-jshint-and-jscs-to-eslint/
+
+Installed bracket extension: https://github.com/zaggino/brackets-eslint
+
+Added .eslintrc-file: https://github.com/adobe/brackets/blob/master/.eslintrc.json
+
+Install eslint: $npm install --save-dev eslint
+
+Had to update to a pre-release of Brackets to get the eslint-plugin to work.
+
+Updated brackets.json with the following configuration so that only ESLint check is done:
+ "language": {
+        "javascript": {
+            "linting.prefer": [
+                "ESLint"
+            ],
+            "linting.usePreferredOnly": true
+        }
+    }
+    
+Delete .jshintrc and .jscsrc
+
+Update gulpfile.js to use eslint instead of jshint and jscs, see documentation https://github.com/adametry/gulp-eslint
+
+Remove jshint, jshint-stylish, gulp-jscs, gulp-jshint from package.json
+
+
+
 
 
 
