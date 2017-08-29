@@ -1,12 +1,14 @@
-<html>
+ <html>
     <head>
 
     </head>
     <body>
       <h1>
+        <!-- The below reads the value of the variable 'title'-->
         <%= title %>
       </h1>
       <ul>
+          <!-- Everything in <% %> is going to be exectued as javascript --> 
           <% for(var i=0; i<list.length;i++){%>
               <li><%=list[i]%></li>
           <%}%>

@@ -1,12 +1,14 @@
 1. Install NodeJS
+I installed it with homebrew
 -verify with '$node -v'
 
 2. Setup npm for this project
 - run '$npm init' from project dir and answer the default on all questions
-- creates file package.json
+- creates the file package.json
 
 3. Install Express
 - run '$npm install express --save'
+--save inputs the express package in package.json
 
 4. Create app.js
 add:
@@ -31,6 +33,7 @@ app.get('/', function(req, res){
 });
 
 8. Find a boostrap template that you like.
+- There are paid and free ones. For free ones: google search "free bootstrap templates" or go to bootstrapzero.com
 - Download and extract the zip
 - create a folder 'public' and copy the css and js directories from the bootstrap theme into that folder
 - create the folder structure 'src/views' and put the index.html in there
@@ -39,7 +42,6 @@ app.get('/', function(req, res){
 This is so that we don't have to create routes for all css and js-files.
 add:
 'app.use(express.static('public'));'
-'app.use(express.static('src/views'));'
 to app.js
 
 10. Install Bower
@@ -133,7 +135,7 @@ $npm install --save-dev wiredep
 $gulp inject
 
 21. Gulp inject
-# Injects my css and js-files into html-files
+# A package that injects my css and js-files into html-files
 - run:
 $npm install --save-dev gulp-inject
 
@@ -156,21 +158,21 @@ Install with:
 $npm install --save ejs
 
 26. Using ejs
-Update app.js and rename index.html to index.ejs
+Update app.js and rename index.html to index.ejs and update in gulpfile.js so that it uses .ejs as source instead of .html
 
 27. Switch to Brackets
 Instead of using Atom as editor I have now switched to Brackets. It is a much better editor.
 I have installed the plugins listed in the screenshots 'BracketsPlugins1 and 2' in the documentation folder. 
 
 28. Replace JSCS and JSHint with ESLint
-Why change? https://www.sitepoint.com/comparison-javascript-linting-tools/
+Why change? It combines JSHint and JSCS in one tool and is recommended in this article: https://www.sitepoint.com/comparison-javascript-linting-tools/
 How-to: https://samdutton.wordpress.com/2015/10/14/javascript-linting-moving-from-jshint-and-jscs-to-eslint/
 
 Installed bracket extension: https://github.com/zaggino/brackets-eslint
 
 Added .eslintrc-file: https://github.com/adobe/brackets/blob/master/.eslintrc.json
 
-Install eslint: $npm install --save-dev eslint
+Install eslint: $npm install --save-dev eslint gulp-eslint
 
 Had to update to a pre-release of Brackets to get the eslint-plugin to work.
 
@@ -192,7 +194,7 @@ Remove jshint, jshint-stylish, gulp-jscs, gulp-jshint from package.json
 
 Updated .eslintrc so that functions does not need to have 'use strict'. I should look into this later.
 
-29. Continuing with EJS.
+29.
 
 
 Notes:

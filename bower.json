@@ -1,37 +1,38 @@
 {
-  "name": "quizapp",
-  "description": "a quizapp",
-  "main": "app.js",
-  "authors": [
+    "name": "quizapp",
+    "description": "a quizapp",
+    "main": "app.js",
+    "authors": [
     "Niclas Ek <niclas.ek@su.se>"
   ],
-  "license": "ISC",
-  "homepage": "",
-  "ignore": [
+    "license": "ISC",
+    "homepage": "",
+    "ignore": [
     "**/.*",
     "node_modules",
     "bower_components",
     "test",
     "tests"
   ],
-  "dependencies": {
-    "bootstrap": "^3.3.7",
-    "font-awesome": "^4.6.3"
-  },
-  "overrides": {
-    "bootstrap": {
-      "main": [
+    "dependencies": {
+        "bootstrap": "^3.3.7",
+        "font-awesome": "^4.6.3"
+    },
+    "_comment": "These overrides are needed for wiredep to know that is going to inject the css files in the html file or whatever file it is injecting to. You can choose which version of the css file you want to use. ",
+    "overrides": {
+        "bootstrap": {
+            "main": [
         "dist/js/bootstrap.js",
         "dist/css/bootstrap.min.css",
         "less/bootstrap.less"
       ]
-    },
-    "font-awesome": {
-      "main": [
+        },
+        "font-awesome": {
+            "main": [
         "less/font-awesome.less",
         "css/font-awesome.min.css",
         "scss/font-awesome.scss"
       ]
+        }
     }
-  }
 }

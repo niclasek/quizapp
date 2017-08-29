@@ -8,6 +8,7 @@ brew install node
 
 ######Install all packages in package.json
 ```
+go to the app folder (which is the folder that holds package.json)
 npm install
 ```
 
