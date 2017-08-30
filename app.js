@@ -4,7 +4,7 @@ var app = express();
 var port = process.env.PORT || 5000;
 
 
-app.listen(port, function(err){
+app.listen(port, function (err) {
     console.log('running server on port ' + port);
 });
 
@@ -22,8 +22,16 @@ app.set('views', './src/views');
 //Sets the view engine to ejs
 app.set('view engine', 'ejs');
 
-app.get('/', function(req, res){
-    //Render the index.ejs with the view engine ejs
-    //Passes in a json-object with the variables title and list.
-    res.render('index', {title: 'Hello from render', list: ['a','b']});
+app.get('/', function (req, res) {
+    //Render the index.ejs with the view engine ejs and passes in a json-object to the ejs-file index.
+    res.render('index', {
+        title: 'Hello from render',
+        nav: [{
+            link: '/articles',
+            text: 'Articoli'
+        }, {
+            link: '/verbs',
+            text: 'Verbi' 
+        }]
+    });
 });
