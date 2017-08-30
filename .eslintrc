@@ -65,6 +65,7 @@
         "XMLHttpRequest": false,
         "Uint32Array": false,
         "WebSocket": false,
-        "process": false
+        "process": false,
+        "module": false
     }
 }
