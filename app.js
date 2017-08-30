@@ -3,6 +3,8 @@ var express = require('express');
 var app = express();
 var port = process.env.PORT || 5000;
 
+//Used to create the routes for /articles
+var articleRouter = express.Router();
 
 app.listen(port, function (err) {
     console.log('running server on port ' + port);
@@ -17,10 +19,29 @@ app.listen(port, function (err) {
 app.use(express.static('public'));
 
 //Sets the variable views to ./src/views
+//With this set res.render will look in this directory for the file namne given as parameter.
 app.set('views', './src/views');
 
 //Sets the view engine to ejs
 app.set('view engine', 'ejs');
+
+articleRouter.route('/')
+    .get(function (req, res) {
+        //Will look for file articoli in ./src/views
+        res.render('articoli', {
+            title: 'Hello from render',
+            nav: [{
+                link: '/articles',
+                text: 'Articoli'
+        }, {
+                link: '/verbs',
+                text: 'Verbi'
+        }]
+        });
+    });
+
+//Tells the app that we want to use the articleRouter. It also tells where to use it.
+app.use('/articles', articleRouter);
 
 app.get('/', function (req, res) {
     //Render the index.ejs with the view engine ejs and passes in a json-object to the ejs-file index.
@@ -31,7 +52,7 @@ app.get('/', function (req, res) {
             text: 'Articoli'
         }, {
             link: '/verbs',
-            text: 'Verbi' 
+            text: 'Verbi'
         }]
     });
 });
