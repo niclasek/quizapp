@@ -2,9 +2,20 @@ var express = require('express');
 
 var app = express();
 var port = process.env.PORT || 5000;
+//Nav should not be hard coded here but rather be in a database or 
+//configuration file or maybe hard coded in a partial that is used in the headers in all view-files.
+var nav = [{
+            link: '/articles',
+            text: 'Articoli'
+        }, {
+            link: '/verbs',
+            text: 'Verbi'
+        }];
 
-//Brings in the articleRouter from articleRoutes
-var articleRouter = require('./src/routes/articleRoutes');
+//articleRoutes exports a function that takes nav as parameter.
+//The function on his hand returns the articleRouter
+var articleRouter = require('./src/routes/articleRoutes')(nav);
+var verbRouter = require('./src/routes/verbRoutes')(nav);
 
 app.listen(port, function (err) {
     console.log('running server on port ' + port);
@@ -26,20 +37,14 @@ app.set('views', './src/views');
 app.set('view engine', 'ejs');
 
 
-
 //Tells the app that we want to use the articleRouter. It also tells where to use it.
 app.use('/articles', articleRouter);
+app.use('/verbs', verbRouter);
 
 app.get('/', function (req, res) {
     //Render the index.ejs with the view engine ejs and passes in a json-object to the ejs-file index.
     res.render('index', {
         title: 'Hello from render',
-        nav: [{
-            link: '/articles',
-            text: 'Articoli'
-        }, {
-            link: '/verbs',
-            text: 'Verbi'
-        }]
+        nav: nav
     });
 });

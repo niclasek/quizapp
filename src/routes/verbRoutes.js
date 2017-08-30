@@ -1,19 +1,19 @@
 var express = require('express');
 
 //Used to create the routes for /articles
-var articleRouter = express.Router();
+var verbRouter = express.Router();
 
 var router = function (nav) {
-    articleRouter.route('/')
+    verbRouter.route('/')
         .get(function (req, res) {
             //Will look for file articoli in ./src/views
-            res.render('articles', {
+            res.render('verbs', {
                 title: 'Hello from render',
                 nav: nav
             });
         });
 
-    return articleRouter;
+    return verbRouter;
 };
 
 //We want to return the function
