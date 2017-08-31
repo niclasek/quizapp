@@ -16,6 +16,7 @@ var nav = [{
 //The function on his hand returns the articleRouter
 var articleRouter = require('./src/routes/articleRoutes')(nav);
 var verbRouter = require('./src/routes/verbRoutes')(nav);
+var adminRouter = require('./src/routes/adminRoutes')(nav);
 
 app.listen(port, function (err) {
     console.log('running server on port ' + port);
@@ -40,6 +41,7 @@ app.set('view engine', 'ejs');
 //Tells the app that we want to use the articleRouter. It also tells where to use it.
 app.use('/articles', articleRouter);
 app.use('/verbs', verbRouter);
+app.use('/admin', adminRouter);
 
 app.get('/', function (req, res) {
     //Render the index.ejs with the view engine ejs and passes in a json-object to the ejs-file index.

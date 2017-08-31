@@ -194,8 +194,14 @@ Remove jshint, jshint-stylish, gulp-jscs, gulp-jshint from package.json
 
 Updated .eslintrc so that functions does not need to have 'use strict'. I should look into this later.
 
-29.
+29. I have started using Routes and separated the file a bit and created some more views. All of this can be seen in the files and I will not document such details here anymore. 
 
+30. Install MongoDB
+I installed it using homebrew
+Run it with: mongod --config /usr/local/etc/mongod.conf
+To connect to the database: mongo
+
+31. Created adminRoutes that I will use to populate the MongoDB
 
 Notes:
 I should be able to install angular with Bower
