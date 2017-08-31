@@ -203,6 +203,11 @@ To connect to the database: mongo
 
 31. Created adminRoutes that I will use to populate the MongoDB
 
+32. Installed the npm package mongodb
+$npm install mongodb --save
+
+33. Reading the verbs from the database
+
 Notes:
 I should be able to install angular with Bower
 Probably it is better to use jquery with templating engines
