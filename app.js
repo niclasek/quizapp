@@ -1,5 +1,8 @@
 var express = require('express');
 var bodyParser = require('body-parser');
+var cookieParser = require('cookie-parser');
+var passport = require('passport');
+var session = require('express-session');
 
 var app = express();
 var port = process.env.PORT || 5000;
@@ -24,18 +27,22 @@ app.listen(port, function (err) {
     console.log('running server on port ' + port);
 });
 
-// app.use allows us to set up some middlewear. Whatever we put in app.use is going to be used by express first, 
+// app.use allows us to set up some middleware. Whatever we put in app.use is going to be used by express first, 
 // before it does anything else.
 // The express.static('public') sets public to a static folder and does so that any request that matches 
 // anything in the folder public express is going to respond with that file, 
 // e.g., the request css/styles.css will return the file styles.css. After it is done looking in the static 
 // folder express will continue with the routes.
 app.use(express.static('public'));
-//bodyparser is another middlewear that is going to parse the body of whatever coming in as request and set it up as a 
+//bodyparser is another middleware that is going to parse the body of whatever coming in as request and set it up as a 
 //json-object that we can access from req.body if it is json and corresponding if it is a urlencoded body.
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded());
+//All 4 below are used for the passport middleware
+app.use(cookieParser());
+app.use(session({secret: 'quizapp'}));
 
+require('./src/config/passport')(app);
 
 //Sets the variable views to ./src/views
 //With this set res.render will look in this directory for the file namne given as parameter.

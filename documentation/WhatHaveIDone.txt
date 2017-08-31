@@ -211,6 +211,16 @@ $npm install mongodb --save
 34. Setting up a sign up and sign in form
 - install body-parser: npm install body-parser --save
 
+35. Passport middleware
+install cookie-parser, passport and express-session
+npm install cookie-parser passport express-session --save
+create a new folder config under src with the file passport.js
+
+36. Passport local
+install passport-local
+npm install passport-local --save
+create a folder in config called strategies and in that folder a file called local.strategy.js
+
 
 Notes:
 I should be able to install angular with Bower
