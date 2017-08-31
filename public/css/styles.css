@@ -1,202 +1,167 @@
-/* -- custom css for Bootstrap 3.x --*/
+/* override bootstrap styles */
+@import url('http://fonts.googleapis.com/css?family=Oswald:300,400:latin,latin-ext');
 
-/* move special fonts to HTML head for better performance */
-@import url(http://fonts.googleapis.com/css?family=Voltaire);
+.navbar-form input, .form-inline input {
+  width:auto;
+}
 
-html,
 body {
-  height: 100%;
-  width: 100%;
-  font-family:Arial,sans-serif;
+  padding-top:50px;
+  color:#646464;
+  background-color:#efefef;
 }
 
-/* fix bs3 horizontal scrollbar bug */
-.row { margin: 0; padding: 0 }
-
-
-/* use special fonts in certain elements */
-h1,h2,h3,h4,.lead,.btn,.navbar a {
-  text-transform:uppercase;
-  font-family:'Voltaire',Arial,sans-serif;
-  letter-spacing:2px;
-}
-
-h1 {
-  font-size:50px;
-}
-
-/* make images gray */
-img.grayscale {
-    filter: url("data:image/svg+xml;utf8,<svg xmlns=\'http://www.w3.org/2000/svg\'><filter id=\'grayscale\'><feColorMatrix type=\'matrix\' values=\'0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0.3333 0.3333 0.3333 0 0 0 0 0 1 0\'/></filter></svg>#grayscale"); /* Firefox 10+, Firefox on Android */
-    filter: gray; /* IE6-9 */
-    -webkit-filter: grayscale(100%); /* Chrome 19+, Safari 6+, Safari 6+ iOS */
-}
-
-.icon-bar {
-   background-color:#fff;
-}
-
-.scroll-down a, .scroll-top a {
-   color:#ffffff;
-}
-
-.scroll-down {
-   position:fixed;
-   bottom:20%;
-   right:0%;
-   color:#f9f9f9;
-}
-
-.scroll-top {
-  background-color:#dbdbdb;
-}
-
-.vert {
-  vertical-align: middle;
-  width:100%;
-  padding-top:4%;
-  text-align:center;
-}
-
-.header .btn-lg {
-   font-size:28px;
-   border-color:#eeeeee;
-   padding:15px;
-   background-color:transparent;
-   color:#ffffff;
-}
-
-.header .btn-lg:hover {
-   background-color:#eeeeee;
-   color:#777777;
-}
-
-.navbar a {
-  color:#fff;
-  font-size:14px;
-}
-
-.navbar-bold.affix {
-  background-color:#d46054;
-}
-
-.navbar-bold {
-  background-color:#f68076;
-  font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
-}
-
-.navbar-bold li a:hover, .navbar-bold li.active {
-  background-color:#d46054;
-}
-
-    
-.header h1 {
-  font-size:80px;
-  -webkit-text-stroke: 1px rgba(f,f,f,0.1);
-  color:#431a6d;
-  color:#fff;
-  margin-left:-5px;
-  margin-bottom:5px;
-  text-transform:uppercase;
-}
-
-.header .lead {
-  color:#d46054;
-  font-size:25px;
-}
-
-.header {
-  height: 80%;
-  background: #f68076 url('http://www.bootply.com/assets/example/pt_topo_l.png') repeat center center fixed;
-}
-
-/* use alt in navbar and header for different color */
-
-.alt {
-  background-color: #6E28C9;
-}
-
-.alt .lead {
-  color: #3B0496;
-}
-
-.alt.affix {
-  background-color:#4C06AB;
-}
-
-.alt li a:hover, .alt li.active {
-  background-color:#5D17BA;
-}
-
-
-
-.blurb {
-  padding: 120px 0;
-  background-color:#fefefe;
-}
-
-.blurb .panel {
-  background-color:transparent;
-}
-
-.bright {
-  background: #dbdbdb url('http://www.bootply.com/assets/example/pt_topo.png') repeat center center fixed; 
-  color:#777;
-}
-
-.featurette {
-  background: #222334;
-  padding: 50px 0;
-  color: #ffffff;
-}
-
-.featurette-item {
-  margin-bottom: 15px;
-}
-
-.featurette-item > i {
-  border: 3px solid #ffffff;
-  border-radius: 50%;
-  display: inline-block;
-  font-size: 56px;
-  width: 140px;
-  height: 140px;
-  line-height: 136px;
-  vertical-align: middle; 
-  text-align: center;
-}
-
-.featurette-item > i:hover {
-  font-size: 68px;
-}
-
-.callout {
-  color: #ffffff;
-  padding-top:7%;
-  height: 100%;
-  width: 100%;
-  background: url('http://www.bootply.com/assets/example/bg_suburb.jpg') no-repeat center center fixed; 
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
-}
-
-.gallery {
-  padding: 50px 0;
-}
-
-.call-to-action {
-  background: #eeeeee;
-  padding: 50px 0;
-}
-
-.call-to-action .btn {
-  margin: 10px;
+h1,h2,h3,.highlight,.navbar a,#masthead h4 {
+  font-family:'Oswald',arial narrow,sans-serif;
 }
 
 footer {
-  padding: 100px 0;
+
+  margin-top:40px;
+  padding-top:40px;
+  padding-bottom:40px;
+  background-color:#cecece;
+ 
 }
 
-/* -- end custom css for Bootstrap 3.x --*/
+
+#masthead {
+  min-height:199px;
+  background-color:#000044;
+  color:#aaaacc;
+}
+
+#masthead h1 {
+  font-size: 55px;
+  line-height: 1;
+  color:#fefeff;
+  margin-top:50px;
+}
+
+#masthead .well {
+  margin-top:31px;
+  background-color:#111166;
+  border-color:#000022;
+  color:#efefff;
+  min-height:127px;
+}
+
+#topPanel {
+  padding-top:0px;
+  padding-left:22px;
+  padding-right:22px;
+}
+#topPanel .panel-body {
+  padding-top:0px;
+}
+
+.navbar.affix {
+  position:fixed;
+  top:0;
+  width:100%;
+}
+
+.top-spacer {
+  background-color:#ffffff;
+  height:40px;
+}
+
+a,a:hover {
+  color:#223344;
+  text-decoration:none;
+}
+
+.icon-bar {
+  background-color:#fff;
+}
+
+@media screen and (min-width: 768px) {
+  #masthead h1 {
+    font-size: 80px;
+  }
+}
+
+.navbar-bright {
+  background-color:#111166;
+  color:#fff;
+  margin-bottom: 0;
+  border-width: 0;
+}
+
+.navbar-bright a, .navbar-bright .navbar-brand, #masthead h4 {
+  color:#ccccdd;
+  font-size:14px;
+  text-transform: uppercase;
+  letter-spacing:.08em;
+}
+
+.navbar-bright li > a:hover {
+  background-color:#000044;
+}
+
+.dropdown-menu {
+  min-width: 250px;
+}
+
+.caret {
+  color:#fff;
+}
+
+.navbar-toggle {
+  color:#fff;
+  border-width:0;
+}
+
+.navbar-toggle:hover {
+  background-color:#fff;
+}
+
+.panel {
+  border-color:transparent;
+  border-radius:0;
+}
+
+.thumbnail {
+  margin-bottom:8px;
+}
+
+.img-container {
+  overflow:hidden;
+  height:170px;
+}
+
+.img-container img {
+  min-width:280px;
+  min-height:180px;
+  max-width:380px;
+  max-height:280px;
+}
+
+.txt-container {
+  overflow:hidden;
+  height:100px;
+}
+
+.panel .lead {
+  overflow:hidden;
+  height:90px;
+}
+
+.label-float{
+  margin:0 auto;
+  position: absolute;
+  top: 0;
+  z-index: 1;
+  width:100%;
+  opacity:.9;
+  padding:6px;
+  color:#fff;
+}
+    
+.btn-twitter {background-color:#4099FF;color:#fff;}
+.btn-facebook {background-color:#3B5998;color:#fff;}
+.btn-google-plus {background-color:#d34836;color:#fff;}
+
+.btn-twitter:hover {background-color:#3088FF;color:#62BBFF;}
+.btn-facebook:hover {background-color:#2A4998;color:#4C6BBA;}
+.btn-google-plus:hover {background-color:#C23836;color:#E45A58;}
