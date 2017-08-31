@@ -208,6 +208,10 @@ $npm install mongodb --save
 
 33. Reading the verbs from the database
 
+34. Setting up a sign up and sign in form
+- install body-parser: npm install body-parser --save
+
+
 Notes:
 I should be able to install angular with Bower
 Probably it is better to use jquery with templating engines
