@@ -14,8 +14,8 @@
 		<![endif]-->
     <!-- This is where wiredep will inject the css-files found in bower.json -->
     <!-- bower:css -->
-    <link rel="stylesheet" href="lib/bootstrap/dist/css/bootstrap.min.css" />
-    <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="/lib/font-awesome/css/font-awesome.min.css" />
     <!-- endbower -->
     <!-- This is where gulp-inject will inject the css-files found in './public/css/*.css' as per configuration in gulpfile.js -->
     <!-- inject:css -->
@@ -23,8 +23,8 @@
     <!-- endinject -->
     <!-- This is where wiredep will inject the js-files found in bower.json -->
     <!-- bower:js -->
-    <script src="lib/jquery/dist/jquery.js"></script>
-    <script src="lib/bootstrap/dist/js/bootstrap.js"></script>
+    <script src="/lib/jquery/dist/jquery.js"></script>
+    <script src="/lib/bootstrap/dist/js/bootstrap.js"></script>
     <!-- endbower -->
     <!-- This is where gulp-inject will inject the js-files found in './public/js/*.js' as per configuration in gulpfile.js -->
     <!-- inject:js -->
@@ -45,18 +45,13 @@
             </div>
             <nav class="collapse navbar-collapse" role="navigation">
                 <ul class="nav navbar-nav">
-                    <li>
-                        <a href="#">Category</a>
-                    </li>
-                    <li>
-                        <a href="#">Category</a>
-                    </li>
-                    <li>
-                        <a href="#">Category</a>
-                    </li>
-                    <li>
-                        <a href="#">Category</a>
-                    </li>
+                    <%for(var i = 0; i<nav.length;i++){%>
+                        <li>
+                            <a href="<%=nav[i].link%>">
+                                <%=nav[i].text%>
+                            </a>
+                        </li>
+                        <%}%>
                 </ul>
                 <ul class="nav navbar-right navbar-nav">
                     <li class="dropdown">

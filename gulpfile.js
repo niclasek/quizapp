@@ -41,7 +41,7 @@ gulp.task('inject', function () {
         directory: './public/lib',
         //ignorePath removes this part of the file path when it is injected in the destination file. 
         //This part of the file path is not needed as our public folder is static. 
-        ignorePath: '../../public/'
+        ignorePath: '../../public'
     };
 
     return gulp.src('./src/views/*.ejs')
